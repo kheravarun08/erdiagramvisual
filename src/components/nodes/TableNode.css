@@ -1,0 +1,152 @@
+/* ── Node shell ──────────────────────────────────────────────────────────── */
+.table-node {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  min-width: 220px;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.table-node--selected {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.table-node__header {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  border-radius: 8px 8px 0 0;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.table-node__icon {
+  font-size: 13px;
+  color: #c7d2fe;
+  flex-shrink: 0;
+}
+
+.table-node__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.02em;
+}
+
+/* ── Column list ─────────────────────────────────────────────────────────── */
+.table-node__columns {
+  padding: 4px 0;
+}
+
+/* ── Column row ──────────────────────────────────────────────────────────── */
+.table-node__col {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.1s;
+}
+
+.table-node__col:last-child {
+  border-bottom: none;
+}
+
+.table-node__col:hover {
+  background: #fafbff;
+}
+
+/* Fixed-width slot so badges never shift column names */
+.table-node__badge-slot {
+  width: 44px;
+  flex-shrink: 0;
+  display: flex;
+  gap: 3px;
+}
+
+.table-node__col-name {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1e1b4b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-node__col-type {
+  font-size: 11px;
+  color: #9ca3af;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+/* ── Constraint badges ───────────────────────────────────────────────────── */
+.col-badge {
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  flex-shrink: 0;
+}
+
+.col-badge--pk {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #d97706;
+}
+
+.col-badge--fk {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #3b82f6;
+}
+
+.col-badge--unique {
+  background: #ede9fe;
+  color: #5b21b6;
+  border: 1px solid #7c3aed;
+}
+
+.col-badge--notnull {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #16a34a;
+}
+
+/* ── ReactFlow handles ───────────────────────────────────────────────────── */
+.table-node__handle {
+  width: 10px !important;
+  height: 10px !important;
+  background: #4f46e5 !important;
+  border: 2px solid #fff !important;
+  transition: background 0.15s;
+}
+
+.table-node__handle:hover {
+  background: #312e81 !important;
+}
+
+/* ── Column type — more readable ─────────────────────────────────────────── */
+.table-node__col-type {
+  font-size: 11px;
+  color: #6366f1;                /* ← was #9ca3af, now indigo to match theme */
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;              /* ← was default weight, now bolder */
+  white-space: nowrap;
+  margin-left: 8px;
+  flex-shrink: 0;
+  background: #eef2ff;           /* ← subtle indigo pill background */
+  padding: 1px 6px;
+  border-radius: 4px;
+}
